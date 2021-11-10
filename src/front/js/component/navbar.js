@@ -1,19 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Nav from "react-bootstrap/Nav";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-					</Link>
-				</div>
-			</div>
-		</nav>
+		<Nav className="justify-content-center" activeKey="/home">
+			<Nav.Item>
+				<Nav.Link href="/home">Active</Nav.Link>
+			</Nav.Item>
+			<Nav.Item>
+				<Nav.Link eventKey="link-1">Link</Nav.Link>
+			</Nav.Item>
+			<Nav.Item>
+				<Nav.Link eventKey="link-2">Link</Nav.Link>
+			</Nav.Item>
+			<Nav.Item>
+				<Nav.Link eventKey="disabled" disabled>
+					Disabled
+				</Nav.Link>
+			</Nav.Item>
+		</Nav>
 	);
 };
